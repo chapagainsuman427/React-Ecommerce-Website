@@ -1,9 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import someReducer from './reducers/someReducer'; // Adjust the import path
+import { storeSlice } from './storeSlice';
 
-const store = configureStore({
-  reducer: someReducer, // Use someReducer as the root reducer
+//import someReducer from './reducers/someReducer'; // Adjust the import path
+
+
+const ecommerceStore = configureStore({
+  reducer: { 
+    store: storeSlice.reducer
+  }, // Use someReducer as the root reducer
   devTools: process.env.NODE_ENV !== 'production', // Enable DevTools only in development mode
 });
 
-export default store;
+export default ecommerceStore;
